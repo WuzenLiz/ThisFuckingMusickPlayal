@@ -1,0 +1,259 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+    color: black;
+}
+
+    a:hover {
+        color: #fa8c8c;
+        outline: none !important;
+        text-decoration: none !important;
+    }
+
+/* Sticky footer styles
+  -------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+html,
+body {
+    height: 100vh;
+}
+
+body {
+    overflow: auto;
+}
+
+.logo {
+    border: 0;
+    margin-bottom: 18px;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding: 0 5px;
+    flex-shrink: 0;
+    -webkit-box-orient: horizontal;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    justify-content: center;
+    display: flex;
+}
+
+.logo-Img {
+    width: 75%;
+}
+
+.side-menu-nav {
+    align-items: self-start;
+    align-content: inherit;
+    overflow: hidden;
+    align-items: flex-start;
+    border-bottom: 1px solid;
+    padding-bottom: 10px;
+}
+
+.side-menu-item {
+    font-size: 20px;
+    font-weight: 300;
+    align-items: self-start;
+    text-decoration: none !important;
+    display: flex;
+    margin: 0px 12px;
+}
+
+    .side-menu-item:active,
+    .fas:active,
+    i:active {
+        font-weight: 900;
+    }
+
+    .side-menu-item:hover,
+    .side-menu-item:focus,
+    .fas:hover,
+    .fas:focus,
+    i:hover {
+        font-weight: 600;
+    }
+
+.side-menu-nav > .side-menu-item > a {
+    align-items: self-start;
+    color: #ffffff;
+}
+
+    .side-menu-nav > .side-menu-item > a:hover {
+        color: #ffffff;
+        outline: none !important;
+        text-decoration: none !important;
+        font-weight: 600;
+    }
+
+#playlist-img {
+    max-height: 30px;
+}
+
+.side-lib-items {
+    display: flex;
+}
+
+    .side-lib-items > a {
+        display: inline-flex;
+    }
+
+        .side-lib-items > a > p {
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: normal;
+            padding-left: 10px;
+        }
+
+            .side-lib-items > a > p:hover {
+                font-weight: 600;
+            }
+
+.Account-menu {
+    padding-bottom: 10px;
+    border-bottom: 1px solid;
+    margin-bottom: 10px;
+}
+
+    .Account-menu > a {
+        display: inline-flex;
+        font-size: 20px;
+    }
+
+        .Account-menu > a > i {
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: normal;
+        }
+
+            .Account-menu > a > i:hover {
+                font-weight: 600;
+            }
+
+.song-info-container {
+    grid-area: songinf;
+    display: flex;
+}
+
+    .song-info-container > img {
+        max-height: 100%;
+        padding-left: 10px;
+        height: 10vh;
+        vertical-align: middle;
+    }
+
+    .song-info-container > .song-info > p {
+        color: aliceblue;
+        font-size: 20px;
+        font-weight: normal;
+        margin-bottom: 10px;
+        vertical-align: middle;
+    }
+
+        .song-info-container > .song-info > p:hover {
+            font-weight: 600;
+        }
+
+.song-info {
+    text-align: start;
+    padding-left: 10px;
+}
+
+.player-container {
+    grid-area: mplayer;
+    vertical-align: middle;
+    width: 40%;
+    max-width: 50vw;
+    -webkit-box-orient: vertical;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: flex;
+    -webkit-box-direction: normal;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.player-controler {
+    display: flex;
+    width: 15vw;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+}
+
+    .player-controler > div {
+        padding-left: 10px;
+        padding-right: 10px;
+        color: #fff;
+    }
+
+.seeking-bar {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+    .seeking-bar > small {
+        color: rgb(255, 255, 255);
+    }
+
+.extent-control {
+    grid-area: extcontrol;
+    display: inline-flex;
+    padding-right: 20px;
+    vertical-align: middle;
+    align-self: center;
+}
+
+.footerPlayer {
+    display: grid;
+    grid-template-areas: "songinf mplayer extcontrol";
+    max-width: 100%;
+    grid-template-rows: 1fr auto;
+    grid-template-columns: auto 1fr;
+}
+
+    .footerPlayer > div {
+        margin-bottom: 0px;
+    }
+
+.volume-ctrl {
+    color: #ffffff;
+    padding-right: 10px;
+}
+#volume-slider{
+}
+#volume {
+    color: aliceblue;
+    padding-left: 10px;
+}

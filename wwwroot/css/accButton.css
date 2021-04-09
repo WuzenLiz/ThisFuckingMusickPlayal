@@ -1,0 +1,12 @@
+﻿.accBtn{
+    width: 40px;
+    overflow: hidden;
+    transition: width 1s;
+}
+.accBtn:hover{
+    width:100%;
+}
+.greeting {
+    padding-left: 10px;
+}
+

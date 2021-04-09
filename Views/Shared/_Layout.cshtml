@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-width, height=device-height, initial-scale=1.0" />
+    <title>Chyha - @ViewData["Title"]</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/site.css" />
+    <link href="css/gridlayout.css" rel="stylesheet" />
+    <link href="css/accButton.css" rel="stylesheet" />
+    <link rel="stylesheet"
+          href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+          crossorigin="anonymous" />
+</head>
+<body onload="Updatetime()">
+    <div class="grid-container">
+        <div class="sideMenu">
+            <a href="/" class="logo">
+                <img class="logo-Img" src="/image/logo.png" />
+            </a>
+            <ul class="side-menu-nav">
+                <li class="side-menu-item active">
+                    <a href="/">
+                        <i class="fas fa-home"> Home</i>
+                    </a>
+                </li>
+                <li class="side-menu-item">
+                    <a href="/">
+                        <i class="far fa-search"> Search</i>
+                    </a>
+                </li>
+                <li class="side-menu-item">
+                    <a href="">
+                        <i class="fal fa-books"> Library</i>
+                    </a>
+                </li>
+            </ul>
+            <div class="Account-menu">
+                <a href="/">
+                    <i class="fas fa-user-circle"> User name </i>
+                </a>
+            </div>
+            <ul class="side-menu-lib">
+                <li class="side-lib-items">
+                    <a href="/">
+                        <img id="playlist-img"
+                             src="/image/88967403_p0.jpg"
+                             alt="playlist image" />
+                        <p id="plalist-name">Playlist 1</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="mainView">
+            <div class="mainView-container">
+                <div class="mainView_navSpacer"></div>
+                <main role="main" class="pb-3">@RenderBody()</main>
+            </div>
+        </div>
+        <div class="footerPlayer">
+            <div class="song-info-container">
+                <img src="image/88967403_p0.jpg" alt="" id="song-img" />
+                <div class="song-info">
+                    <p id="song-name">Sample</p>
+                    <p id="song-artist">Artist</p>
+                </div>
+            </div>
+            <dir class="player-container">
+                <div class="player-controler">
+                    <div onclick="">
+                        <i class="fas fa-fast-backward"></i>
+                    </div>
+                    <div id="play-pause-btn">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div onclick="">
+                        <i class="fas fa-fast-forward"></i>
+                    </div>
+                </div>
+                <div class="seeking-bar" href="javascript:;">
+                    <audio id="song" ontimeupdate="initProgressBar()">
+                        <source src="/audio/[Vietsub] Tiểu Sinh Từ - Thiêm Nhi Bái 小生辞 - 添儿呗 Cổ Phong khúc.mp3"
+                                type="audio/mp3" />
+                    </audio>
+                    <small id="start-time"></small>
+                    <span id="seek-obj-container">
+                        <progress id="seek-obj" value="0" max="1"></progress>
+                    </span>
+                    <small id="end-time"></small>
+                </div>
+            </dir>
+            <div class="extent-control">
+                <div class="volume-ctrl" onclick="mutesound()" id="volume-ctrl">
+                    <i class="fas fa-volume"></i>
+                </div>
+                <input type="range"
+                       min="0"
+                       max="100"
+                       value="50"
+                       id="volume-slider"
+                       step="1"
+                       onchange="outputUpdate(value)" />
+                <output for="volume-slider" id="volume">50</output>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

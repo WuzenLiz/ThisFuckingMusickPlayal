@@ -1,0 +1,65 @@
+﻿.sideMenu {
+    grid-area: sideMenu;
+    background-color: #23233b;
+    max-height: 100vh;
+    overflow: auto;
+    max-width: 15vw;
+    z-index: 3;
+    border-right: 1px solid #ffffff;
+    justify-items: center;
+}
+
+.mainView {
+    grid-area: mainView;
+    z-index: 4;
+    padding-top: 60px !important;
+}
+
+/*Footerlayout*/
+.footerPlayer {
+    grid-area: footerPlayer;
+    background-color: #23233b;
+    border-top: 1px;
+    border-top-style: groove;
+    z-index: 5;
+    max-height: 15vh;
+    bottom: 0px;
+    justify-items: center;
+    justify-content: space-between;
+}
+
+.topNavBar {
+    grid-area: mainView;
+    display: flex;
+    z-index: 2;
+    height: 60px;
+    min-width: 0;
+    flex-direction: row;
+    align-items: baseline;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: "sideMenu mainView mainView" "sideMenu mainView mainView" "footerPlayer footerPlayer footerPlayer";
+    width: 99.999999999999999vw;
+    height: 100vh;
+    grid-template-rows: 1fr auto;
+    grid-template-columns: auto 1fr;
+}
+
+    .grid-container > div {
+        text-align: center;
+        padding: 20px 0;
+        font-size: 30px;
+    }
+
+.mainView {
+    position: relative;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-height: 0;
+}
