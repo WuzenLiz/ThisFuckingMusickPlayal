@@ -18,6 +18,12 @@ namespace ThisFuckingMusickPlayal.Models
         {
         }
 
+        public User(string username, string password)
+        {
+            this.username = username;
+            this.password = password;
+        }
+
         public User(string username, string password, string name, int age, List<int> idPlaylist)
         {
             this.username = username;
