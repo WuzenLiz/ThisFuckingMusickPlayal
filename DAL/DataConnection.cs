@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,7 +9,7 @@ namespace ThisFuckingMusickPlayal.DAL
 {
     public class DataConnection
     {
-        private const string ConnectionString = @"";
+        private const string connectionString = @"";
         
         public Song getSong(int id)
         {
@@ -20,8 +21,13 @@ namespace ThisFuckingMusickPlayal.DAL
             return null;
         }
 
-        public bool checkLogin()
+        public bool checkLogin(User user)
         {
+            SqlConnection conn = new SqlConnection(connectionString);
+            SqlCommand comm = conn.CreateCommand();
+
+            comm.CommandText = "Execute CHECKLOGIN @username, @password";
+
             return false;
         }
 
@@ -39,5 +45,6 @@ namespace ThisFuckingMusickPlayal.DAL
         {
 
         }
+
     }
 }
