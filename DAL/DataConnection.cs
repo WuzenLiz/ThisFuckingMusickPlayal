@@ -13,6 +13,12 @@ namespace ThisFuckingMusickPlayal.DAL
         
         public Song getSong(int id)
         {
+            SqlConnection conn = new SqlConnection(connectionString);
+            SqlCommand comm = conn.CreateCommand();
+
+            comm.CommandText = "Execute GETSONG @id";
+            SqlDataReader reader = comm.ExecuteReader();
+
             return null;
         }
 
