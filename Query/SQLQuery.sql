@@ -58,3 +58,8 @@ AS
 		values (@name, @author, @image)
 
 RETURN 0
+
+CREATE PROCEDURE GETSONG
+	@id int
+AS
+	select * from [dbo].[SONG] where id = @id
